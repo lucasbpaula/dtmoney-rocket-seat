@@ -1,26 +1,31 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Dashboard } from './components/Dashboard';
+import { Header } from './components/Header';
+import { GlobalStyle } from './styles/global';
+import { createServer } from 'miragejs';
 
-function App() {
+createServer({
+  routes() {
+    this.namespace = 'api';
+
+    this.get('transactions', () => {
+      return [
+        {id: 0, title: 'Joguin', category: 'Games', createdAt: new Date('21/03/2020'), type: 'withdraw'},
+        {id: 1, title: 'Cafezin', category: 'Comida', createdAt: new Date('22/03/2013'), type: 'withdraw'},
+        {id: 2, title: 'Criacao Site', category: 'Desenvolvimento', createdAt: new Date('23/05/2021'), type: 'deposit'}
+      ]
+    })
+  }
+})
+
+
+
+export function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Header />
+      <Dashboard/>
+      <GlobalStyle />
+    </>
   );
 }
 
-export default App;
