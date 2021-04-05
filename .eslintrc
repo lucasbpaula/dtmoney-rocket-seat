@@ -1,0 +1,51 @@
+{
+    "env": {
+        "jest": true
+    },
+    "extends": ["airbnb", "prettier", "prettier/react"],
+    "plugins": ["prettier", "react-hooks"],
+    "rules": {
+        "import/extensions": "off",
+        "react/jsx-filename-extension": [
+            1,
+            {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        ],
+        "react/jsx-props-no-spreading": ["off"],
+        "react/prop-types": 0,
+        "no-underscore-dangle": 0,
+        "import/imports-first": ["error", "absolute-first"],
+        "import/newline-after-import": "error",
+        "import/prefer-default-export": 0,
+        "import/no-extraneous-dependencies": "off",
+        "import/no-cycle": "off",
+        "semi": "off",
+        "no-console": "off",
+        "jsx-a11y/label-has-associated-control": "off",
+        "react/prefer-stateless-function": "off",
+        "react-hooks/exhaustive-deps": 0,
+        "react/self-closing-comp": "off",
+        "react/react-in-jsx-scope": "off"
+    },
+    "globals": {
+        "window": true,
+        "document": true,
+        "localStorage": true,
+        "FormData": true,
+        "FileReader": true,
+        "Blob": true,
+        "navigator": true,
+        "Headers": true,
+        "Request": true,
+        "fetch": true
+    },
+    "parser": "babel-eslint",
+    "settings": {
+        "import/resolver": {
+            "node": {
+                "extensions": [".js", ".jsx", ".ts", ".tsx"]
+            }
+        }
+    }
+}
